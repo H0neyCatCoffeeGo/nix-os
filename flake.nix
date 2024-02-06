@@ -1,32 +1,29 @@
 {
- description = "Shit";
+  description = "Combined project";
 
-inputs = {
-  nixpkgs.url="nixpkgs/nixos-23.11";
-  home-manager={
-    url = "github:nix-community/home-manager/release-23.11";
-    inputs.nixpkgs.follows = "nixpkgs";
+  inputs = {
+    shit.url = "path:./Shit.nix";
+    cpp.url = "path:./cpp.nix";
   };
-  nix-colors.url="github:misterio77/nix-colors";
-};
 
-outputs = { self, nixpkgs, home-manager, ... }@inputs:
-let
-  lib = nixpkgs.lib;
-        pkgs = nixpkgs.legacyPackages."x86_64-linux";
-  in  {
-    nixosConfigurations = {
+  outputs = { self, shit, cpp, ... } @inputs:
+    let
+      lib = shit.lib;
+      nixpkgs = cpp.nixpkgs;
+    in {
+      nixosConfigurations = {
         Shit = lib.nixosSystem {
           system = "x86_64-linux";
-          modules = [ ./configuration.nix ];
+          modules = [ shit.configuration.nix ];
         };
-    };
-    homeConfigurations = {
-      ok = home-manager.lib.homeManagerConfiguration {
-        inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home.nix ];
       };
+      homeConfigurations = {
+        ok = cpp.home-manager.lib.homeManagerConfiguration {
+          inherit nixpkgs;
+          extraSpecialArgs = { inherit inputs; };
+          modules = [ ./home.nix ];
+        };
+      };
+      devShell = cpp.outputs.devShell;
     };
-  };
 }

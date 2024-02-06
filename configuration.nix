@@ -110,13 +110,13 @@
   pkgs.xfce.thunar
 
 # Development Tools (C++)
-  pkgs.gcc
-  pkgs.binutils
-  pkgs.cmake
-  pkgs.gdb
-  pkgs.rocmPackages.llvm.clang-tools-extra
-  pkgs.clang
-  pkgs.clang-tools
+#  pkgs.gcc
+#  pkgs.binutils
+#  pkgs.cmake
+#  pkgs.gdb
+#  pkgs.rocmPackages.llvm.clang-tools-extra
+#  pkgs.clang
+#  pkgs.clang-tools
 
 # Web Browsers and Graphics
   pkgs.firefox
@@ -127,8 +127,10 @@
   pkgs.neovim
   pkgs.git
   pkgs.emacs
+  pkgs.python311Packages.pip
 
 # Utilities
+  pkgs.p7zip
   pkgs.zip
   pkgs.unzip
   pkgs.killall
@@ -153,7 +155,7 @@
   pkgs.feh
   pkgs.cmus
   pkgs.cava
-  pkgs.ytmdl
+  pkgs.youtube-dl
 
 # Retro Gaming (RetroArch)
   pkgs.retroarch
