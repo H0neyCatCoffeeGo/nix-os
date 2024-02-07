@@ -125,6 +125,7 @@
 # Text Editors and Version Control
   pkgs.wget
   pkgs.neovim
+  pkgs.codeblocks
   pkgs.git
   pkgs.emacs
   pkgs.python311Packages.pip
