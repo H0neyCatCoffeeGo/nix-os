@@ -110,16 +110,11 @@
   pkgs.xfce.thunar
 
 # Development Tools (C++)
-#  pkgs.gcc
-#  pkgs.binutils
-#  pkgs.cmake
-#  pkgs.gdb
-#  pkgs.rocmPackages.llvm.clang-tools-extra
-#  pkgs.clang
-#  pkgs.clang-tools
+  pkgs.libgcc
 
 # Web Browsers and Graphics
   pkgs.firefox
+  pkgs.tor-browser
   pkgs.krita
 
 # Text Editors and Version Control
@@ -162,7 +157,7 @@
   pkgs.retroarch
 
 # Office Suite
-  pkgs.libreoffice
+  pkgs.libreoffice-fresh
 
 # Communication
   pkgs.thunderbird
