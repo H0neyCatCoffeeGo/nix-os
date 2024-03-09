@@ -4,7 +4,7 @@
     let colors = config.colorScheme.colors;
     in {
     settings = {
-      image = "~/.wallpaper/Kojiro.png";
+      image = "~/.wallpaper/swiggle.jpg";
       color = "${colors.base00}";
       font-size = 24;
       indicator-idle-visible = false;

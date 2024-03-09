@@ -11,7 +11,7 @@
   boot.loader.grub.device = "/dev/sda";
   boot.loader.grub.useOSProber = true;
 
-  networking.hostName = "Shit"; # Define your hostname.
+  networking.hostName = "Overdose"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
  
   # Configure network proxy if necessary
@@ -39,11 +39,18 @@
     LC_TIME = "en_US.UTF-8";
   };
 
+  services.geoclue2.appConfig.redshift.isAllowed = true;
+
   # Enable the X11 windowing system.
-  services.xserver.enable = true;
+  services.xserver = {
+    enable = true;
+  };
 
   # Enable sddm.
-  services.xserver.displayManager.sddm.enable = true;
+  services.xserver.displayManager.sddm = { 
+    enable = true;
+    theme = "pkgs.where-is-my-sddm-theme";
+  };
 
   # WMs
   programs.sway.enable = true;
@@ -54,12 +61,34 @@
 
   # Configure keymap in X11
   services.xserver = {
-    layout = "us";
-    xkbVariant = "";
+    exportConfiguration = true; 
+    layout = "us, pk";
+    xkbOptions = "eurosign:e, compose:menu, grp:alt_space_toggle";
   };
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
+
+  services.avahi = {
+    enable = true;
+    nssmdns = true;
+    openFirewall = true;
+  };
+
+  hardware.printers = {
+    ensurePrinters = [
+      {
+        name = "Dell_1250c";
+        location = "Home";
+        deviceUri = "http://192.168.178.2:631/printers/Dell_1250c";
+        model = "drv:///sample.drv/generic.ppd";
+        ppdOptions = {
+          PageSize = "A4";
+        };
+      }
+    ];
+    ensureDefaultPrinter = "Dell_1250c";
+  };
 
   # Enable sound with pipewire.
   sound.enable = true;
@@ -91,6 +120,7 @@
     ];
   };
 
+
   # Fonts
   fonts.packages = [ pkgs.nerdfonts pkgs.nafees ];
 
@@ -108,13 +138,21 @@
   pkgs.wofi
   pkgs.alacritty
   pkgs.xfce.thunar
+  pkgs.pfetch
+  pkgs.watershot
 
 # Development Tools (C++)
-  pkgs.libgcc
+
+# Printing for f*cks sake
+  pkgs.hplipWithPlugin
+  pkgs.gnupg1orig
+  pkgs.apparmor-utils
+  pkgs.gobject-introspection
 
 # Web Browsers and Graphics
   pkgs.firefox
   pkgs.tor-browser
+
   pkgs.krita
 
 # Text Editors and Version Control
@@ -123,7 +161,11 @@
   pkgs.codeblocks
   pkgs.git
   pkgs.emacs
+  pkgs.python3
   pkgs.python311Packages.pip
+
+  pkgs.texliveTeTeX
+  pkgs.texlive.combined.scheme-full
 
 # Utilities
   pkgs.p7zip
@@ -132,6 +174,10 @@
   pkgs.killall
   pkgs.gnumake
   pkgs.wl-clipboard
+  pkgs.gcc
+  pkgs.nodejs_21
+  pkgs.brightnessctl
+  pkgs.mako
 
 # Themes
   pkgs.artim-dark
@@ -152,16 +198,34 @@
   pkgs.cmus
   pkgs.cava
   pkgs.youtube-dl
+  pkgs.blanket
 
-# Retro Gaming (RetroArch)
-  pkgs.retroarch
+ pkgs.mangal
+
+# Screen Capture
+  pkgs.grim
+  pkgs.slurp
+
+# Games
+  pkgs.lutris
+  pkgs.wine
 
 # Office Suite
   pkgs.libreoffice-fresh
 
+  pkgs.inkscape
+
 # Communication
   pkgs.thunderbird
   pkgs.armcord
+
+# Books
+  pkgs.bookworm
+  pkgs.redshift
+  pkgs.anki
+  pkgs.drawio
+
+  pkgs.zsh-syntax-highlighting
 
   ];
 
@@ -178,6 +242,14 @@
   #   enableSSHSupport = true;
   # };
 
+  users.defaultUserShell=pkgs.zsh; 
+
+  programs = {
+    zsh = {
+      enable = true;
+    };
+  };
+
   # List services that you want to enable:
 
   # Enable the OpenSSH daemon.
@@ -187,7 +259,7 @@
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+  networking.firewall.enable = false;
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions
