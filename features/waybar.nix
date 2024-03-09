@@ -4,6 +4,7 @@
     let colors = config.colorScheme.colors;
     in {
       enable = true;
+
       style = ''
 
       @define-color base00 #${colors.base00};
