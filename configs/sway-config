@@ -10,7 +10,7 @@ set $term alacritty
 set $menu wofi --show drun
 
 # Wallpaper 
-output * bg ~/.wallpaper/gruvbox_grid.png fill
+output * bg ~/.wallpaper/StayWithMe.png fill
 
 ### Idle configuration
  exec swayidle -w \
@@ -188,5 +188,4 @@ bar {
 }
 
 exec --no-startup-id emacs --daemon
-
 include /etc/sway/config.d/*

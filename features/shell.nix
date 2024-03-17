@@ -26,7 +26,7 @@ programs.bash = {
     oh-my-zsh = {
       enable = true;
       plugins = [ "git" ];
-      theme = "robbyrussell";
+      theme = "gallois";
     };
     prezto.prompt = {
       theme = "gruvbox";

@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ config, pkgs, callPackage, ... }:
 
 {
   imports =
@@ -39,8 +39,6 @@
     LC_TIME = "en_US.UTF-8";
   };
 
-  services.geoclue2.appConfig.redshift.isAllowed = true;
-
   # Enable the X11 windowing system.
   services.xserver = {
     enable = true;
@@ -74,6 +72,8 @@
     nssmdns = true;
     openFirewall = true;
   };
+
+    location.provider = "geoclue2";
 
   hardware.printers = {
     ensurePrinters = [
@@ -122,7 +122,7 @@
 
 
   # Fonts
-  fonts.packages = [ pkgs.nerdfonts pkgs.nafees ];
+  fonts.packages = [ pkgs.nerdfonts pkgs.nafees pkgs.noto-fonts-cjk-sans];
 
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
@@ -136,6 +136,7 @@
   pkgs.swaylock
   pkgs.swayidle
   pkgs.wofi
+  pkgs.rofi
   pkgs.alacritty
   pkgs.xfce.thunar
   pkgs.pfetch
@@ -151,7 +152,6 @@
 
 # Web Browsers and Graphics
   pkgs.firefox
-  pkgs.tor-browser
 
   pkgs.krita
 
@@ -163,6 +163,7 @@
   pkgs.emacs
   pkgs.python3
   pkgs.python311Packages.pip
+  pkgs.imagemagick
 
   pkgs.texliveTeTeX
   pkgs.texlive.combined.scheme-full
@@ -199,8 +200,7 @@
   pkgs.cava
   pkgs.youtube-dl
   pkgs.blanket
-
- pkgs.mangal
+  pkgs.mangal
 
 # Screen Capture
   pkgs.grim
@@ -218,10 +218,9 @@
 # Communication
   pkgs.thunderbird
   pkgs.armcord
+  pkgs.cordless
 
 # Books
-  pkgs.bookworm
-  pkgs.redshift
   pkgs.anki
   pkgs.drawio
 

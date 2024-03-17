@@ -30,6 +30,13 @@
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
 
+  services.gammastep = {
+   enable = true;
+   provider = "manual";
+   latitude = 31.55800000;
+   longitude = 74.3507100;
+  };
+
   home.packages = [
     # # Adds the 'hello' command to your environment. It prints a friendly
     # # "Hello, world!" when run.
