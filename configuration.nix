@@ -164,6 +164,8 @@
   pkgs.python3
   pkgs.python311Packages.pip
   pkgs.imagemagick
+  pkgs.lazygit
+  pkgs.tldr
 
   pkgs.texliveTeTeX
   pkgs.texlive.combined.scheme-full
