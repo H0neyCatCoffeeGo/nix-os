@@ -10,7 +10,7 @@ set $term alacritty
 set $menu wofi --show drun
 
 # Wallpaper 
-output * bg ~/.wallpaper/Ice.jpg fill
+output * bg ~/.wallpaper/gruv_cave.png fill
 
 ### Idle configuration
  exec swayidle -w \

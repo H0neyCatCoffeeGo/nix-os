@@ -152,21 +152,19 @@
 
 # Web Browsers and Graphics
   pkgs.firefox
-
   pkgs.krita
 
 # Text Editors and Version Control
+  pkgs.git
+  pkgs.lazygit
   pkgs.wget
   pkgs.neovim
   pkgs.codeblocks
-  pkgs.git
   pkgs.emacs
   pkgs.python3
   pkgs.python311Packages.pip
   pkgs.imagemagick
-  pkgs.lazygit
   pkgs.tldr
-
   pkgs.texliveTeTeX
   pkgs.texlive.combined.scheme-full
 
@@ -228,7 +226,10 @@
   pkgs.anki
   pkgs.drawio
 
+# Mecilinious
   pkgs.zsh-syntax-highlighting
+  pkgs.nix-prefetch
+  pkgs.nix-prefetch-github
 
   ];
 
