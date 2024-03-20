@@ -181,6 +181,7 @@
   pkgs.nodejs_21
   pkgs.brightnessctl
   pkgs.mako
+  pkgs.libnotify
 
 # Themes
   pkgs.artim-dark

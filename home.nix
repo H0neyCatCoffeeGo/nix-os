@@ -26,6 +26,7 @@
     ./features/sway-lock.nix
     ./features/zathura.nix
     ./features/shell.nix
+    ./features/mako.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;

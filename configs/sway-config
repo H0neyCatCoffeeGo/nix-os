@@ -152,7 +152,7 @@ client.background       #F8F8F2
 #
 # My Binds
 #
-    bindsym $mod+Shift+s exec ~/.local/share/screenshot.sh 
+    bindsym $mod+Shift+s exec screenshot 
 #
 # Resizing containers:
 #
@@ -188,4 +188,5 @@ bar {
 }
 
 exec --no-startup-id emacs --daemon
+exec mako
 include /etc/sway/config.d/*
