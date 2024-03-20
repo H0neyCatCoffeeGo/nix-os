@@ -47,7 +47,7 @@
   # Enable sddm.
   services.xserver.displayManager.sddm = { 
     enable = true;
-    theme = "pkgs.where-is-my-sddm-theme";
+    theme = "${import ./features/sddm.nix {inherit pkgs;}}";
   };
 
   # WMs
@@ -131,7 +131,12 @@
   # $ nix search wget
   environment.systemPackages = [
 
-    (import ./scripts/screenshot.nix {inherit pkgs;})
+  (import ./scripts/screenshot.nix {inherit pkgs;})
+
+  # sddm
+  pkgs.libsForQt5.qt5.qtquickcontrols2
+  pkgs.libsForQt5.qt5.qtgraphicaleffects
+
 
   # Window Manager (Sway)
   pkgs.waybar

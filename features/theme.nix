@@ -1,11 +1,21 @@
-{ pkgs, config, ... }: {
+{ pkgs, config, ... }:
 
+  let
+    gruvboxPlus = import ./gtkGruvbox.nix { inherit pkgs; };
+  in
+  {
   gtk = {
     enable = true;
 
-    theme.name = "Gruvbox-Dark-BL-LB";
-    iconTheme.name = "Papirus-Dark";
-    cursorTheme.name = "Capitaine Cursors";
+    theme.package = pkgs.adw-gtk3;
+    theme.name = "adw-gtk3";
+
+    cursorTheme.package = pkgs.capitaine-cursors-themed;
+    cursorTheme.name = "Capitaine Cursors (Gruvbox)";
+
+    iconTheme.package = gruvboxPlus;
+    iconTheme.name = "GruvboxPlus";
+
     font = {
       name = "JetBrainsMono Nerd Font";
       size = 12;
@@ -16,7 +26,7 @@
     enable = true;
 
     platformTheme = "gtk";
-    style.name = "Gruvbox-Dark-BL-LB";
+    style.name = "adwita-dark";
 
   };
 

@@ -1,9 +1,10 @@
-{ pkgs, config, ... }:
+{ pkgs }:
 
 let
   imgLink = https://gruvbox-wallpapers.pages.dev/wallpapers/pixelart/gruvbox-pacman-ghosts.png;
   image = pkgs.fetchurl {
     url = imgLink;
+    sha256 = "sha256-JlLVPXGZkEe2VkZ0yhAUk86OXvWgqWFBqtENd1QC7G0";
   };
 in
 pkgs.stdenv.mkDerivation {
