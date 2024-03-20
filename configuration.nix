@@ -131,6 +131,8 @@
   # $ nix search wget
   environment.systemPackages = [
 
+    (import ./scripts/screenshot.nix {inherit pkgs;})
+
   # Window Manager (Sway)
   pkgs.waybar
   pkgs.swaylock
@@ -141,8 +143,6 @@
   pkgs.xfce.thunar
   pkgs.pfetch
   pkgs.watershot
-
-# Development Tools (C++)
 
 # Printing for f*cks sake
   pkgs.hplipWithPlugin
@@ -207,6 +207,7 @@
 # Screen Capture
   pkgs.grim
   pkgs.slurp
+  pkgs.swappy
 
 # Games
   pkgs.lutris
