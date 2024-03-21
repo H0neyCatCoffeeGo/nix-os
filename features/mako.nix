@@ -8,10 +8,10 @@
     width = 200;
     height = 100;
     icons = true;
-    backgroundColor = "#${base01}";
+    backgroundColor = "#${base00}";
     borderColor = "#${base0D}";
     borderSize = 2;
-    textColor = "#${base04}";
+    textColor = "#${base05}";
     layer = "overlay";
     defaultTimeout = 5000;
   };

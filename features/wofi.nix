@@ -8,10 +8,8 @@
 
     settings = {
       allow_markup = true;
-      width = 200;
+      width = 400;
       height = 290;
-      x = 10;
-      y = 10;
       prompt = "" ;
     };
 
@@ -68,6 +66,7 @@
       }
       #entry:selected #text { 
         color: #${colors.base00};
+        font-weight: bold;
         }
     '';
   };
