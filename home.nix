@@ -20,7 +20,7 @@
   imports = [
     inputs.nix-colors.homeManagerModules.default
     ./features/waybar.nix
-    ./features/wofi.nix
+    ./features/rofi.nix
     ./features/theme.nix
     ./features/alacritty.nix
     ./features/sway-lock.nix
