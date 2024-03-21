@@ -8,23 +8,26 @@
 
     settings = {
       allow_markup = true;
-      width = 400;
+      width = 200;
       height = 290;
-      gtkk = false;
+      x = 10;
+      y = 10;
+      prompt = "" ;
     };
 
     style = ''
+      * { all: initial; }
       window {
         margin: 0px;
         font-family : JetBrainsMono Nerd Font;
-	font-weight: bold;
-        font-size : 15px;
+        font-size : 11px;
         border: 1px solid #${colors.base00};
         background-color: #${colors.base00};
       }
 
       #input {
-        margin: 5px;
+        margin: 2px;
+        padding: 5px;
         border: none;
         color: #${colors.base06};
         background-color: #${colors.base01};
@@ -60,11 +63,11 @@
         background-color: #${colors.base0C};
       }
       #entry:selected {
+        background-color: #${colors.base0D};
         border: none;
       }
       #entry:selected #text { 
-        color: #${colors.base00}; 
-        colors: #${colors.base0C};
+        color: #${colors.base00};
         }
     '';
   };

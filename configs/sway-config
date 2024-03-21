@@ -7,7 +7,7 @@ set $up k
 set $right l
 
 set $term alacritty
-set $menu rofi -show run
+set $menu wofi --show run
 
 # Wallpaper 
 output * bg ~/.wallpaper/gruv_cave.png fill

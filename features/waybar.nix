@@ -37,7 +37,7 @@
       @define-color critical    @base08;
       @define-color mode    @base00;
       @define-color unfocused    @base00;
-      @define-color focused    @base0C;
+      @define-color focused    @base0D;
       @define-color inactive    @base0E;
       @define-color sound    @base0E;
       @define-color network    @base0B;

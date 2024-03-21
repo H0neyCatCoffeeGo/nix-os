@@ -9,8 +9,7 @@
     height = 100;
     icons = true;
     backgroundColor = "#${base01}";
-    borderColor = "#${base0E}";
-    borderRadius = 5;
+    borderColor = "#${base0D}";
     borderSize = 2;
     textColor = "#${base04}";
     layer = "overlay";
