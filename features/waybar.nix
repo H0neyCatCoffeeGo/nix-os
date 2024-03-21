@@ -139,6 +139,7 @@
 
       /* Active (on focused output) */
       #workspaces button.focused {
+        font-weight: normal;
         color: @base00;
         background: @focused;
       }
