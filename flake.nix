@@ -9,6 +9,7 @@ inputs = {
   };
   utils.url = "github:numtide/flake-utils";
   nix-colors.url="github:misterio77/nix-colors";
+  xremap-flake.url="github:xremap/nix-flake";
 };
 
 outputs = { self, nixpkgs, home-manager, ... }@inputs:

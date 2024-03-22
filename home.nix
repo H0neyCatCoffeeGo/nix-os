@@ -17,8 +17,15 @@
 
   # The home.packages option allows you to install Nix packages into your
   # environment.
+  #Shortcuts
+  hardware.uinput.enable = true;
+  user.group.uinput.members = [ "ok" ];
+  user.group.input.members = [ "ok" ];
+
   imports = [
     inputs.nix-colors.homeManagerModules.default
+    ./hardware-configuration.nix
+    inputs.xremap-flake.homeManagerModules.default
     ./features/waybar.nix
     ./features/wofi.nix
     ./features/theme.nix
@@ -36,6 +43,19 @@
    provider = "manual";
    latitude = 31.55800000;
    longitude = 74.3507100;
+  };
+
+  services.xremap = {
+    withSway = true;
+    config = {
+      modmap = {
+        name = "main";
+        remap = {
+          CAPSLOCK = "ESC";
+          RIGHTSHIFT = "BACKSPACE";
+        };
+      };
+    };
   };
 
   home.packages = [

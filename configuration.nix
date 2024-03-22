@@ -143,28 +143,19 @@
   pkgs.swaylock
   pkgs.swayidle
   pkgs.wofi
-  pkgs.rofi
   pkgs.alacritty
-  pkgs.xfce.thunar
   pkgs.pfetch
-  pkgs.watershot
-
-# Printing for f*cks sake
-  pkgs.hplipWithPlugin
-  pkgs.gnupg1orig
-  pkgs.apparmor-utils
-  pkgs.gobject-introspection
 
 # Web Browsers and Graphics
   pkgs.firefox
   pkgs.krita
+  pkgs.inkscape
 
 # Text Editors and Version Control
   pkgs.git
   pkgs.lazygit
   pkgs.wget
   pkgs.neovim
-  pkgs.codeblocks
   pkgs.emacs
   pkgs.python3
   pkgs.python311Packages.pip
@@ -186,25 +177,12 @@
   pkgs.mako
   pkgs.libnotify
 
-# Themes
-  pkgs.artim-dark
-  pkgs.gruvbox-gtk-theme
-
-# Cursor Themes
-  pkgs.capitaine-cursors-themed
-
-# Icon Themes
-  pkgs.gruvbox-dark-icons-gtk
-  pkgs.papirus-folders
-  pkgs.papirus-icon-theme
-
 # Multimedia
   pkgs.mpv
   pkgs.zathura
   pkgs.feh
   pkgs.cmus
   pkgs.cava
-  pkgs.youtube-dl
   pkgs.blanket
   pkgs.mangal
 
@@ -220,7 +198,6 @@
 # Office Suite
   pkgs.libreoffice-fresh
 
-  pkgs.inkscape
 
 # Communication
   pkgs.thunderbird
