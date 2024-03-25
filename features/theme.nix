@@ -105,7 +105,7 @@
     enable = true;
 
     platformTheme = "gtk";
-    style.name = "adwita-dark";
+    style.name = "Adwaita-Dark";
 
   };
 

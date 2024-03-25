@@ -10,6 +10,7 @@ inputs = {
   utils.url = "github:numtide/flake-utils";
   nix-colors.url="github:misterio77/nix-colors";
   xremap-flake.url="github:xremap/nix-flake";
+  spicetify-nix.url = "github:the-argus/spicetify-nix";
 };
 
 outputs = { self, nixpkgs, home-manager, ... }@inputs:
@@ -19,6 +20,7 @@ let
   in  {
     nixosConfigurations = {
         Shit = lib.nixosSystem {
+          specialArgs = { inherit inputs; };
           system = "x86_64-linux";
           modules = [ ./configuration.nix ];
         };

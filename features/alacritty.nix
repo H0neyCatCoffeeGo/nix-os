@@ -5,7 +5,7 @@
   programs.alacritty.settings = {
     font = {
       normal = {
-        family = "consolas";
+        family = "JetBrainsMono Nerd Font";
       };
       bold = {
         family = "JetBrainsMono Nerd Font";

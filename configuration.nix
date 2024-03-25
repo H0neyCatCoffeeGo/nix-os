@@ -1,9 +1,10 @@
-{ config, pkgs, callPackage, ... }:
+{ config, pkgs, callPackage, inputs, ... }:
 
 {
   imports =
     [ # Include the results of the hardware scan.
       ./hardware-configuration.nix
+      inputs.xremap-flake.nixosModules.default
     ];
 
   # Bootloader.
@@ -56,6 +57,22 @@
 
   # Autostarts
   services.emacs.enable = true;
+
+  # Remaps
+  services.xremap = {
+    withWlroots = true;
+    userName = "ok";
+    config = {
+      keymap = [
+        {
+          name = "main";
+          remap = {
+            "CAPSLOCK" = "ESC";
+          };
+        }
+      ];
+    };
+  };
 
   # Configure keymap in X11
   services.xserver = {
@@ -185,6 +202,7 @@
   pkgs.cava
   pkgs.blanket
   pkgs.mangal
+  pkgs.spotify
 
 # Screen Capture
   pkgs.grim
