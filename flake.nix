@@ -13,7 +13,7 @@ inputs = {
   spicetify-nix.url = "github:the-argus/spicetify-nix";
 };
 
-outputs = { self, nixpkgs, home-manager, ... }@inputs:
+outputs = { self, nixpkgs, home-manager, spicetify-nix, ... }@inputs:
 let
   lib = nixpkgs.lib;
         pkgs = nixpkgs.legacyPackages."x86_64-linux";
@@ -28,8 +28,11 @@ let
     homeConfigurations = {
       ok = home-manager.lib.homeManagerConfiguration {
         inherit pkgs;
-        extraSpecialArgs = { inherit inputs; };
-        modules = [ ./home.nix ];
+        extraSpecialArgs = { inherit inputs spicetify-nix;
+                           };
+        modules = [ ./home.nix
+                     ./features/spotify.nix
+                  ];
       };
     };
   };
