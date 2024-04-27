@@ -48,7 +48,6 @@ programs.bash = {
       };
     }
   ];
-    initExtra = "export PATH=$PATH:~/.local/bin/
-                  ~/Code/Quote_fetch/a.out";
+    initExtra = "export PATH=$PATH:~/.local/bin/";
   };
 }

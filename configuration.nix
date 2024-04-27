@@ -78,7 +78,7 @@
   services.xserver = {
     exportConfiguration = true; 
     layout = "us, pk";
-    xkbOptions = "eurosign:e, compose:menu, grp:alt_space_toggle";
+    xkbOptions = "grp:win_space_toggle";
   };
 
   # Enable CUPS to print documents.
@@ -154,12 +154,12 @@
   pkgs.libsForQt5.qt5.qtquickcontrols2
   pkgs.libsForQt5.qt5.qtgraphicaleffects
 
-
   # Window Manager (Sway)
   pkgs.waybar
   pkgs.swaylock
   pkgs.swayidle
   pkgs.wofi
+  pkgs.rofi-wayland
   pkgs.alacritty
   pkgs.pfetch
 
@@ -167,6 +167,7 @@
   pkgs.firefox
   pkgs.krita
   pkgs.inkscape
+  pkgs.libresprite
 
 # Text Editors and Version Control
   pkgs.git
@@ -187,12 +188,15 @@
   pkgs.unzip
   pkgs.killall
   pkgs.gnumake
+  pkgs.cmake
+  pkgs.xorg.libX11.dev
   pkgs.wl-clipboard
   pkgs.gcc
   pkgs.nodejs_21
   pkgs.brightnessctl
   pkgs.mako
   pkgs.libnotify
+  pkgs.udiskie
 
 # Multimedia
   pkgs.mpv
@@ -203,6 +207,9 @@
   pkgs.blanket
   pkgs.mangal
   pkgs.spotify
+  pkgs.ytfzf
+  pkgs.qbittorrent
+  pkgs.xfce.thunar
 
 # Screen Capture
   pkgs.grim
@@ -212,10 +219,11 @@
 # Games
   pkgs.lutris
   pkgs.wine
+  pkgs.steam-tui
+  pkgs.ttyper
 
 # Office Suite
   pkgs.libreoffice-fresh
-
 
 # Communication
   pkgs.thunderbird
@@ -253,6 +261,12 @@
       enable = true;
     };
   };
+
+  programs.steam = {
+     enable = true;
+     remotePlay.openFirewall = true; # Open ports in the firewall for Steam Remote Play
+     dedicatedServer.openFirewall = true; # Open ports in the firewall for Source Dedicated Server
+   };
 
   # List services that you want to enable:
 
