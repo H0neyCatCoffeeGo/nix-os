@@ -39,7 +39,7 @@
       @define-color error_fg_color #${colors.base05};
       @define-color window_bg_color #${colors.base00};
       @define-color window_fg_color #${colors.base05};
-      @define-color view_bg_color #3c3836;
+      @define-color view_bg_color #${colors.base02};
       @define-color view_fg_color #${colors.base05};
       @define-color headerbar_bg_color mix(#${colors.base00},black,0.2);
       @define-color headerbar_fg_color #${colors.base05};

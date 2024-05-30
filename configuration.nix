@@ -161,17 +161,18 @@
   pkgs.wofi
   pkgs.rofi-wayland
   pkgs.alacritty
-  pkgs.pfetch
 
 # Web Browsers and Graphics
+  pkgs.mullvad-browser
   pkgs.firefox
+  pkgs.qutebrowser
+  pkgs.tor-browser
   pkgs.krita
   pkgs.inkscape
   pkgs.libresprite
 
 # Text Editors and Version Control
   pkgs.git
-  pkgs.lazygit
   pkgs.wget
   pkgs.neovim
   pkgs.emacs
@@ -190,6 +191,7 @@
   pkgs.gnumake
   pkgs.cmake
   pkgs.xorg.libX11.dev
+  pkgs.wayland-scanner
   pkgs.wl-clipboard
   pkgs.gcc
   pkgs.nodejs_21
@@ -204,12 +206,8 @@
   pkgs.feh
   pkgs.cmus
   pkgs.cava
-  pkgs.blanket
-  pkgs.mangal
   pkgs.spotify
-  pkgs.ytfzf
   pkgs.qbittorrent
-  pkgs.xfce.thunar
 
 # Screen Capture
   pkgs.grim
@@ -219,16 +217,13 @@
 # Games
   pkgs.lutris
   pkgs.wine
-  pkgs.steam-tui
   pkgs.ttyper
 
 # Office Suite
   pkgs.libreoffice-fresh
 
 # Communication
-  pkgs.thunderbird
   pkgs.armcord
-  pkgs.cordless
 
 # Books
   pkgs.anki

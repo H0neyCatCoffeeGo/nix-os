@@ -6,16 +6,16 @@ set $down j
 set $up k
 set $right l
 
-set $menu wofi --show run
+set $menu rofi -show drun
 set $term alacritty
 
 # Wallpaper 
-output * bg ~/.wallpaper/gruv_cave.png fill
+output * bg ~/.wallpaper/anime_skull.png fill
 
 ### Idle configuration
  exec swayidle -w \
-          timeout 3000 'swaylock -f -c 000000' \
-          timeout 6000 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+          timeout 300 'swaylock -f -c 000000' \
+          timeout 600 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
           before-sleep 'swaylock -f -c 000000'
 
 ### Windows
@@ -187,6 +187,10 @@ bar {
         swaybar_command waybar
     }
 }
+
+#Floating window for side
+for_window [title="Extension: (Sidebery) - Tab Preview--- — Mozilla Firefox"] floating enable
+
 
 exec --no-startup-id emacs --daemon
 exec mako

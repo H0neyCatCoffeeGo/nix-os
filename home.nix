@@ -28,9 +28,59 @@
     ./features/zathura.nix
     ./features/shell.nix
     ./features/mako.nix
+    ./features/spotify.nix
+    ./features/rofi.nix
   ];
 
   colorScheme = inputs.nix-colors.colorSchemes.gruvbox-dark-hard;
+
+#  colorScheme = {
+#    slug = "monochrome";
+#    name = "Monochrome";
+#    author = "Your Name (https://github.com/yourgithub)";
+#    palette = {
+#      base00 = "#000000";
+#      base01 = "#111111";
+#      base02 = "#222222";
+#      base03 = "#333333";
+#      base04 = "#777777";
+#      base05 = "#999999";
+#      base06 = "#BBBBBB";
+#      base07 = "#DDDDDD";
+#      base08 = "#444444";
+#      base09 = "#555555";
+#      base0A = "#666666";
+#      base0B = "#888888";
+#      base0C = "#AAAAAA";
+#      base0D = "#CCCCCC";
+#      base0E = "#EEEEEE";
+#      base0F = "#FFFFFF";
+#   };
+# };
+
+#  colorScheme = {
+#    slug = "Catppuccin";
+#    name = "Mocha";
+#    author = "https://github.com/catppuccin/base16/blob/main/base16/mocha.yaml";
+#    palette = {
+#      base00 =  "#1e1e2e"; # base
+#      base01 =  "#181825"; # mantle
+#      base02 =  "#313244"; # surface0
+#      base03 =  "#45475a"; # surface1
+#      base04 =  "#585b70"; # surface2
+#      base05 =  "#cdd6f4"; # text
+#      base06 =  "#f5e0dc"; # rosewater
+#      base07 =  "#b4befe"; # lavender
+#      base08 =  "#f38ba8"; # red
+#      base09 =  "#fab387"; # peach
+#      base0A =  "#f9e2af"; # yellow
+#      base0B =  "#a6e3a1"; # green
+#      base0C =  "#94e2d5"; # teal
+#      base0D =  "#89b4fa"; # blue
+#      base0E =  "#cba6f7"; # mauve
+#      base0F =  "#f2cdcd"; # flamingo
+#    };
+#  };
 
   services.gammastep = {
    enable = true;
